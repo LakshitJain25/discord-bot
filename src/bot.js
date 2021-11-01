@@ -9,12 +9,9 @@ fs = require('fs')
 const path = require('path')
 const { channel } = require('diagnostics_channel')
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
+const allIntents = Discord.Intents.all();
 const client = new Client({
-    intents: [
-        'GUILDS',
-        'GUILD_VOICE_STATES',
-        'GUILD_MESSAGES',
-    ],
+    intents: allIntents
 })
 const PREFIX = "-"
 
