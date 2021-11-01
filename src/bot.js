@@ -18,6 +18,7 @@ const client = new Client({
 })
 const PREFIX = "-"
 
+client.login(process.env.token)
 const distube = new DisTube.default(client, {
     searchSongs: 0,
     searchCooldown: 20,
@@ -108,5 +109,4 @@ client.on('message', (message) => {
 
 
 
-client.login(process.env.DISCORDJS_BOT_TOKEN)
 
