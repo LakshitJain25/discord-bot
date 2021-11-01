@@ -1,0 +1,8 @@
+This bot is made by Hqreport, right now it can only send kawaii anime gifs/images. More features will be added soon(maybe idk). 
+
+To use the anime pic sender:
+use the command "-anime [type] [subtype]" without the quotation marks and brackets
+the type is sfw 
+under sfw subtypes  are : hug , kiss , slap , punch , wink , pat , kill , cuddle , waifu  
+
+eg command: -anime sfw punch
