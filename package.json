@@ -16,6 +16,7 @@
     "discord-tts": "^1.2.1",
     "discord.js": "^12.5.3",
     "distube": "^3.0.1",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "ffmpeg": "^0.0.4"
   }
 }
