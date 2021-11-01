@@ -1,4 +1,5 @@
-const { Client, MessageAttachment } = require('discord.js')
+const { Client, MessageAttachment,Intents } = require('discord.js')
+const Discord = require('discord.js')
 const API = require('anime-images-api')
 const images_api = new API()
 const DisTube = require('distube')
@@ -9,7 +10,7 @@ fs = require('fs')
 const path = require('path')
 const { channel } = require('diagnostics_channel')
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') })
-const allIntents = Discord.Intents.all();
+const allIntents = Discord.Intents.ALL
 const client = new Client({
     intents: allIntents
 })
