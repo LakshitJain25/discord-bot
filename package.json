@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@discordjs/opus": "^0.5.3",
+    "@discordjs/voice": "^0.7.2",
     "anime-images-api": "^2.0.0",
     "discord-tts": "^1.2.1",
     "discord.js": "^12.5.3",
