@@ -1,9 +1,10 @@
-const { Client, MessageAttachment,Intents } = require('discord.js')
+const { Client, MessageAttachment, Intents } = require('discord.js')
 const Discord = require('discord.js')
 const API = require('anime-images-api')
 const images_api = new API()
 const DisTube = require('distube')
 const checkMounted = require('./utils/mountBot/mountBot')
+const fetchWeather = require('./utils/weather/weather')
 const tts = require('./utils/tts/tts')
 fs = require('fs')
 
@@ -26,15 +27,15 @@ const distube = new DisTube.default(client, {
     leaveOnStop: true,
     emitNewSongOnly: true
 })
-    // distube.on('playSong', (queue, song) => {
-    //         console.log(queue)
-    //         queue.textChannel.send(` __***${song.name}***__ is being played right now, thanks to one and only #${song.user}!# \n ${song.url}`)
-    //         return
-    //     })
-    .on('addSong', (queue, song) => {
-        queue.textChannel.send(` __***${song.name}***__ is added right now, thanks to one and only #${song.user}!# \n ${song.url}`)
-        return
-    })
+// distube.on('playSong', (queue, song) => {
+//         console.log(queue)
+//         queue.textChannel.send(` __***${song.name}***__ is being played right now, thanks to one and only #${song.user}!# \n ${song.url}`)
+//         return
+//     })
+distube.on('addSong', (queue, song) => {
+    queue.textChannel.send(` __***${song.name}***__ is added right now, thanks to one and only #${song.user}!# \n ${song.url}`)
+    return
+})
 
 const anime = {
     types: ['sfw'],
@@ -95,8 +96,12 @@ client.on('message', (message) => {
         }
 
         else if (CMD_NAME === 'disconnect' || CMD_NAME === 'leave') {
-         console.log()   
-         message.member.voice.channel.leave()
+            console.log(message.member.voice.channel.leave)
+            message.member.voice.channel.leave()
+        }
+
+        else if (CMD_NAME === 'weather') {
+            fetchWeather(message, args)
         }
 
     }
