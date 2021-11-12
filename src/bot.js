@@ -4,6 +4,7 @@ const API = require('anime-images-api')
 const images_api = new API()
 const DisTube = require('distube')
 const checkMounted = require('./utils/mountBot/mountBot')
+const fetchGif  = require('../src/utils/lala/lala')
 const fetchWeather = require('./utils/weather/weather')
 const tts = require('./utils/tts/tts')
 fs = require('fs')
@@ -102,6 +103,10 @@ client.on('message', (message) => {
 
         else if (CMD_NAME === 'weather') {
             fetchWeather(message, args)
+        }
+
+        else if (CMD_NAME === 'lala') {
+            fetchGif(message, args)
         }
 
     }
